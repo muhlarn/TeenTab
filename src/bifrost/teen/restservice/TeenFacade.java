@@ -1,4 +1,4 @@
-package bifrost.teen.dao;
+package bifrost.teen.restservice;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,10 +6,14 @@ import java.util.List;
 import javax.inject.Singleton;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import bifrost.teen.dao.AccountsDaoImpl;
+import bifrost.teen.dao.CategoryDaoImpl;
+import bifrost.teen.dao.TransactionsDaoImpl;
 import bifrost.teen.dto.Account;
 import bifrost.teen.dto.Category;
 import bifrost.teen.dto.Transactions;
@@ -67,6 +71,8 @@ public class TeenFacade {
 		return transList;
 	}
 
+    @GET
+    @Path("/categories")
 	public List<Category> getCategories() {
 
 		List<Category> catList = new ArrayList<Category>();
@@ -81,6 +87,8 @@ public class TeenFacade {
 
 	}
 
+    @POST
+    @Path("/categories/catagory")
 	public void addCategory(Category category) throws DaoException {
 
 		try {

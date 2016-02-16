@@ -2,9 +2,8 @@ package bifrost.teen.test;
 
 import java.math.BigDecimal;
 
-import bifrost.teen.dao.TeenFacade;
 import bifrost.teen.dto.Category;
-import bifrost.teen.exception.DaoException;
+import bifrost.teen.restservice.TeenFacade;
 
 public class TeenTester {
 
